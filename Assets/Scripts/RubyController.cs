@@ -15,15 +15,11 @@ public class RubyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Horizontal movement
+        float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
         Vector2 position = transform.position;
-        position.x = position.x + 0.1f * horizontal;
-        transform.position = position;
-
-        //Vertical movement
-        float vertical = Input.GetAxis("Vertical");
-        position.y = position.y + 0.1f * vertical;
+        position.x = position.x + 3.0f * horizontal *Time.deltaTime;
+        position.y =  position.y + 3.0f * vertical *Time.deltaTime;
         transform.position = position;
 
     }
